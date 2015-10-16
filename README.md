@@ -206,7 +206,7 @@ To deploy locally for testing or for demo
 
 
 ##DISCLAIMER
-The domain knowledge of WebEx can be built up by reading the REST API documentation under https://developer.cisco.com/media/webex-xml-api/Chapter1IntroductiontoWebExXMLServices.html. You'll notice some compatibility issues between XML API version and also the backend WebEx (aka Train) versions.  There are some tricky implementation challenges learned while debugging, e.g. <meetingkey /> is used in setMeeting() but <meetingKey/> (not <meetingkey/>) should be used in deleteMeeting(). 
+The domain knowledge of WebEx can be built up by reading the REST API documentation under https://developer.cisco.com/media/webex-xml-api/Chapter1IntroductiontoWebExXMLServices.html. You'll notice some compatibility issues between XML API version and also the backend WebEx (aka Train) versions.  There are some tricky implementation challenges learned while debugging, e.g. meetingkey is used in setMeeting() but meetingKey (not meetingkey) should be used in deleteMeeting(). 
 
 The REST API implementation is based on a mix of Java EE design patterns, and has nothing related to any WebEx code base.
 The deployment design to include ESAPI XSS check, valid email address check, API documentation generator is also not related
