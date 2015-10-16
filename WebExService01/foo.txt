@@ -1,0 +1,89 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building WebExService01 Web Services 1.0-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ WebExService01 ---
+[INFO] Deleting /Users/ray/dev/opensource/WebExService01/target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ WebExService01 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ WebExService01 ---
+[INFO] Compiling 5 source files to /Users/ray/dev/opensource/WebExService01/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ WebExService01 ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /Users/ray/dev/opensource/WebExService01/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ WebExService01 ---
+[INFO] Compiling 1 source file to /Users/ray/dev/opensource/WebExService01/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ WebExService01 ---
+[INFO] Surefire report directory: /Users/ray/dev/opensource/WebExService01/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.ourhome.test.ConferencingServiceTest
+Attempting to load ESAPI.properties via file I/O.
+Attempting to load ESAPI.properties as resource file via file I/O.
+Not found in 'org.owasp.esapi.resources' directory or file not readable: /Users/ray/dev/opensource/WebExService01/ESAPI.properties
+Not found in SystemResource Directory/resourceDirectory: .esapi/ESAPI.properties
+Not found in 'user.home' (/Users/ray) directory: /Users/ray/esapi/ESAPI.properties
+Loading ESAPI.properties via file I/O failed. Exception was: java.io.FileNotFoundException
+Attempting to load ESAPI.properties via the classpath.
+SUCCESSFULLY LOADED ESAPI.properties via the CLASSPATH from '/ (root)' using current thread context class loader!
+Attempting to load validation.properties via file I/O.
+Attempting to load validation.properties as resource file via file I/O.
+Not found in 'org.owasp.esapi.resources' directory or file not readable: /Users/ray/dev/opensource/WebExService01/validation.properties
+Not found in SystemResource Directory/resourceDirectory: .esapi/validation.properties
+Not found in 'user.home' (/Users/ray) directory: /Users/ray/esapi/validation.properties
+Loading validation.properties via file I/O failed.
+Attempting to load validation.properties via the classpath.
+SUCCESSFULLY LOADED validation.properties via the CLASSPATH from '/ (root)' using current thread context class loader!
+###valid###...compare invalidEmail='#@%^%#$@#$@#.com'...'#@%^%#$@#$@#.com'
+###valid###...compare invalidEmail='@example.com'...'@example.com'
+###valid###...compare invalidEmail='Joe Smith <email@example.com>'...'Joe Smith <email@example.com>'
+###valid###...compare invalidEmail='email.example.com'...'email.example.com'
+###valid###...compare invalidEmail='email@example@example.com'...'email@example@example.com'
+###valid###...compare invalidEmail='email.@example.com'...'email.@example.com'
+###valid###...compare invalidEmail='あいうえお@example.com'...'あいうえお@example.com'
+###valid###...compare invalidEmail='email@example.com (Joe Smith)'...'email@example.com (Joe Smith)'
+###valid###...compare invalidEmail='email@example'...'email@example'
+..valid email for email@-example.com
+***invalid***...compare invalidEmail='email@-example.com'...'email@-example.com'
+..valid email for email@example.web
+***invalid***...compare invalidEmail='email@example.web'...'email@example.web'
+###valid###...compare invalidEmail='email@111.222.333.44444'...'email@111.222.333.44444'
+###valid###...compare invalidEmail='email@example..com'...'email@example..com'
+###valid###...compare invalidEmail='Abc..123@example.com'...'Abc..123@example.com'
+###valid###...compare invalidEmail='just"not"right@example.com'...'just"not"right@example.com'
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.458 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-war-plugin:2.2:war (default-war) @ WebExService01 ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [WebExService01] in [/Users/ray/dev/opensource/WebExService01/target/WebExService01]
+[INFO] Processing war project
+[INFO] Copying webapp resources [/Users/ray/dev/opensource/WebExService01/src/main/webapp]
+[INFO] Webapp assembled in [76 msecs]
+[INFO] Building war: /Users/ray/dev/opensource/WebExService01/target/WebExService01.war
+[INFO] WEB-INF/web.xml already added, skipping
+[INFO] 
+[INFO] --- maven-install-plugin:2.4:install (default-install) @ WebExService01 ---
+[INFO] Installing /Users/ray/dev/opensource/WebExService01/target/WebExService01.war to /Users/ray/.m2/repository/com/ourhome/WebExService01/1.0-SNAPSHOT/WebExService01-1.0-SNAPSHOT.war
+[INFO] Installing /Users/ray/dev/opensource/WebExService01/pom.xml to /Users/ray/.m2/repository/com/ourhome/WebExService01/1.0-SNAPSHOT/WebExService01-1.0-SNAPSHOT.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 9.907 s
+[INFO] Finished at: 2015-10-13T12:13:53-07:00
+[INFO] Final Memory: 26M/62M
+[INFO] ------------------------------------------------------------------------
