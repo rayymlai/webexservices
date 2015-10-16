@@ -23,7 +23,10 @@ import com.ourhome.services.ConferencingService;
  * REST API contract for backend services
  * 
  * @author ray - Oct 16, 2015 7:40:28 AM
- * 
+ *
+ * License: CC0 1.0 Universal
+ * For more information, please see
+ * <http://creativecommons.org/publicdomain/zero/1.0/>
  */
 @Path("/meetings")
 public class ConferencingServiceEndpoint {

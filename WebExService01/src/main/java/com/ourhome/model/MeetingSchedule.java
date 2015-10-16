@@ -7,6 +7,10 @@ import com.google.gson.Gson;
  * 
  * @author ray - Oct 16, 2015 7:40:16 AM
  * 
+ * License: CC0 1.0 Universal
+ * For more information, please see
+ * <http://creativecommons.org/publicdomain/zero/1.0/>
+ * 
  */
 public class MeetingSchedule {
 

@@ -12,6 +12,10 @@ package com.ourhome.test;
  * - does not cover small load test
  * 
  * @author ray - Oct 16, 2015 7:40:42 AM
+ * 
+ * License: CC0 1.0 Universal
+ * For more information, please see
+ * <http://creativecommons.org/publicdomain/zero/1.0/>
  */
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
