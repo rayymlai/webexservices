@@ -1,19 +1,20 @@
 # WebEx REST API micro-service
 Updated: Oct 16, 2015
 
-This Maven project creates REST API Web service and can be deployed in a dockeried Tomcat Web container as a micro-service. It wraps public WebEx XML API, and exposes as a JAX-RS REST API. It provides examples of:
+This Maven project creates REST API Web services that can be deployed in a dockerized Tomcat Web container as a micro-service. It wraps public WebEx XML APIs, and exposes as JAX-RS REST API. It provides examples of:
+* Creating RESTful Web services by wrapping public WebEx XML APIs
 * Positive and negative test cases in JUnit test
 * Use of ESAPI Maven plugin for cross-site scripting prevention
 * Use of findbugs for static code analysis (code quality and seccurity vulnerabilities)
 
-##OVERVIEW
+##Overview
 This reference application contains:
-1. REST API to wrap the public Cisco WebEx XML API
-2. Unit tests with positive and negative test cases 
-3. Static code analysis using findBugs (code quality and security)
-4. Use jetty container for local testing - without the need to deploy manually to a remote app server
+* Creating RESTful Web services based on Java EE design patterns
+* Unit tests with positive and negative test cases 
+* Static code analysis using findBugs (code quality and security)
+* Use jetty container for local testing - without the need to deploy manually to a remote app server
 
-##PROJECT STRUCTURE
+##Project Structure
 /src/main/java/com.ourhome
 
 * ConferencingServiceEndpoint.java - REST API contract for webex meetings. This end-point will act as a facade to ConferencingService.java backend service
@@ -39,7 +40,7 @@ This reference application contains:
 * This demo page will invoke VerifyMe.java to verify if this Web service is working
 
 
-##DEMO GUIDE
+##Demo Guide
 1. After editing webex.properties with valid values for WebEx access, run "mvn clean install" and "mvn jetty:run" to deploy the app
 2. Open a new Web browser with URL http://localhost:8080/conferencing/verifyMe to test if REST API is working
 3. Use 'curl' on your Linux/Mac (or Windows) host to test if your REST API is working, e.g.
@@ -54,7 +55,10 @@ curl -X POST -H "Content-type: application/json" -d '{"inviteeList":"rayymlai@gm
 <hostname><port>/conferencing/verifyMe
 GET
 
-Example: http://localhost:8080/conferencing/verifyMe
+Example: 
+```
+http://localhost:8080/conferencing/verifyMe
+```
 
 2. createMeeting - create an online meeting (e.g. meeting center) by posting a JSON object with start date, title, meeting password
 <hostname><port>/conferencing/meetings
@@ -62,7 +66,7 @@ POST
 
 Example: 
 ```
-curl -X POST -H "Content-type: application/json" -d '{"inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 00:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789"}' http://localhost:8080/conferencing/meetings
+%curl -X POST -H "Content-type: application/json" -d '{"inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 00:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789"}' http://localhost:8080/conferencing/meetings
 Meeting created. Meeting details={"meetingHost":"test","inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 00:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789","meetingKey":"625566782","hostMeetingURL":"https://acstest-d.webex.com/acstest-d/j.php?MTID\u003dm6638e39dd6d2208ed201796830cb965e","attendeeMeetingURL":"https://acstest-d.webex.com/acstest-d/j.php?MTID\u003dmebed1dd43fdd54bebb57df007d674265"}
 ```
 
@@ -72,7 +76,7 @@ Meeting created. Meeting details={"meetingHost":"test","inviteeList":"rayymlai@g
 POST
 Example: 
 ```
-curl -X POST -H "Content-type: application/json" -d '{"meetingKey":"625566782", "inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 01:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789"}' http://localhost:8080/conferencing/meetings/update/625566782 
+%curl -X POST -H "Content-type: application/json" -d '{"meetingKey":"625566782", "inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 01:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789"}' http://localhost:8080/conferencing/meetings/update/625566782 
 ```
 
 4. DeleteMeeting - delete an existing WebEx meeting (with a known meeting key)
@@ -82,7 +86,7 @@ DELETE
 
 Example: 
 ```
-curl -X DELETE -H "Content-type: application/json" -d '{"meetingKey":"629600591", "inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 01:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789"}' http://localhost:8080/conferencing/meetings/update/629600591
+%curl -X DELETE -H "Content-type: application/json" -d '{"meetingKey":"629600591", "inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 01:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789"}' http://localhost:8080/conferencing/meetings/update/629600591
 ```
 
 5. listMeeting - list existing/future meetings (limit to max # specified in the API)
@@ -92,10 +96,10 @@ GET
 
 Example: 
 ```
-curl -X GET -H "Content-type: application/json" -d '{"meetingKey":"629600591", "inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 01:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789"}' http://localhost:8080/conferencing/meetings/list/20
+%curl -X GET -H "Content-type: application/json" -d '{"meetingKey":"629600591", "inviteeList":"rayymlai@gmail.com","startDate":"10/13/2015 01:26:32","meetingTitle":"scrum meeting","meetingPassword":"123456789"}' http://localhost:8080/conferencing/meetings/list/20
 ```
 
-##IMPLEMENTATION GUIDE
+##Implementation Guide
 1. Pre-requisites
 1.1 Maven project setup
 * To create this Maven project from scratch, I use Maven archetype with Jersey simple webapp to generate the code template.
@@ -192,7 +196,7 @@ To deploy locally for testing or for demo
 %mvn jetty:run
 ```
 
-##DESIGN GUIDE
+##Design Guide
 1.  JAX-RS Jersey framework to define REST API
 2.  Separate UI web tier, service tier, data model from REST API
 - use singleton for helper class (e.g. config file)
@@ -200,12 +204,12 @@ To deploy locally for testing or for demo
 4.  Incorporate negative test cases to verify invalid email addresses and invalid meeting date
 
 
-##CONSTRAINTS
+##Constraints
 1. WebEx XML API is slow due to XML marshalling/processing and also global routing based on the siteName
 2. WebEx XML response is not synchronous or real time - usually <2 sec latency (1 to 2 seconds)
 
 
-##DISCLAIMER
+##Disclaimer
 The domain knowledge of WebEx can be built up by reading the REST API documentation under https://developer.cisco.com/media/webex-xml-api/Chapter1IntroductiontoWebExXMLServices.html. You'll notice some compatibility issues between XML API version and also the backend WebEx (aka Train) versions.  There are some tricky implementation challenges learned while debugging, e.g. meetingkey is used in setMeeting() but meetingKey (not meetingkey) should be used in deleteMeeting(). 
 
 The REST API implementation is based on a mix of Java EE design patterns, and has nothing related to any WebEx code base.
