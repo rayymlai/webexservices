@@ -10,7 +10,240 @@
       {
         "title": "x",
         "thumbnail": "./public/content/images/thumbnail.jpg",
-        "id": 0
+        "id": 0,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 41,
+                "y": 44
+              },
+              "angle": 0,
+              "id": "a1b02fa8-3da5-425a-bc9c-38a157b93d43",
+              "z": 1,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "process 0"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 100,
+                "height": 100
+              },
+              "position": {
+                "x": 454,
+                "y": 17
+              },
+              "angle": 0,
+              "id": "423d3e26-7e24-4c0b-8281-0f0b24073178",
+              "z": 2,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "process 1"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 160,
+                "height": 80
+              },
+              "position": {
+                "x": 319,
+                "y": 406
+              },
+              "angle": 0,
+              "id": "f2f24658-079d-45b2-b5bc-eec34f904f28",
+              "z": 3,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                "text": {
+                  "text": "actor 2"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "f2f24658-079d-45b2-b5bc-eec34f904f28"
+              },
+              "target": {
+                "id": "a1b02fa8-3da5-425a-bc9c-38a157b93d43"
+              },
+              "vertices": [
+                {
+                  "x": 260,
+                  "y": 303
+                },
+                {
+                  "x": 124,
+                  "y": 426
+                }
+              ],
+              "id": "bc8e140b-5b3e-448b-b3c1-4bb541acc0e9",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "flow 3",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 4,
+              "hasOpenThreats": false,
+              "attrs": {
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                },
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "f2f24658-079d-45b2-b5bc-eec34f904f28"
+              },
+              "target": {
+                "id": "a1b02fa8-3da5-425a-bc9c-38a157b93d43"
+              },
+              "vertices": [
+                {
+                  "x": 447,
+                  "y": 206
+                }
+              ],
+              "id": "02cd1bcb-3025-42d3-8ae1-fcbbb4d364d7",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "flow 4",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 5,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Flow",
+              "smooth": true,
+              "source": {
+                "id": "423d3e26-7e24-4c0b-8281-0f0b24073178"
+              },
+              "target": {
+                "x": 481,
+                "y": 437
+              },
+              "vertices": [
+                {
+                  "x": 768,
+                  "y": 120
+                },
+                {
+                  "x": 752,
+                  "y": 195
+                },
+                {
+                  "x": 689,
+                  "y": 224
+                },
+                {
+                  "x": 484,
+                  "y": 456
+                }
+              ],
+              "id": "e493ba1d-f307-42d2-9174-47d3009397e3",
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "flow 5",
+                      "font-weight": "400",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "z": 6,
+              "attrs": {}
+            },
+            {
+              "type": "tm.Boundary",
+              "smooth": true,
+              "source": {
+                "x": 129,
+                "y": 496
+              },
+              "target": {
+                "x": 229,
+                "y": 495
+              },
+              "vertices": [
+                {
+                  "x": 217,
+                  "y": 426
+                },
+                {
+                  "x": 443,
+                  "y": 358
+                },
+                {
+                  "x": 665,
+                  "y": 560
+                }
+              ],
+              "id": "ee253501-ab77-435c-84bc-8a4e9cb85f9c",
+              "z": 7,
+              "attrs": {}
+            }
+          ]
+        },
+        "size": {
+          "height": 611.5684204101562,
+          "width": 812
+        }
       }
     ],
     "reviewer": "x"
